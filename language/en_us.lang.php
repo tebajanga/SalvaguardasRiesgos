@@ -9,14 +9,21 @@
  ************************************************************************************/
 
 $mod_strings = array(
-	'ModuleName' => 'Module Name',
-	'SINGLE_ModuleName' => 'Module Name',
-	'ModuleName ID' => 'Module Name ID',
+	'SalvaguardasRiesgos' => 'SalvaguardasRiesgos',
+	'SINGLE_SalvaguardaRiesgo' => 'SalvaguardaRiesgo',
+	'SalvaguardaRiesgo ID' => 'SalvaguardaRiesgo ID',
 
 	'LBL_CUSTOM_INFORMATION' => 'Custom Information',
-	'LBL_MODULEBLOCK_INFORMATION' => 'ModuleBlock Information',
+	'LBL_SALVAGUARDARIESGO' => 'SalvaguardaRiesgo',
+	'LBL_SALVAGUARDARIESGO_INFORMATION' => 'SalvaguardaRiesgo Information',
 	'LBL_DESCRIPTION_INFORMATION' => 'Description',
 
-	'ModuleFieldLabel' => 'ModuleFieldLabel Text',
+	'catsg' => 'Catsg',
+	'redprobabilidad' => 'Redprobabilidad',
+	'catrsg' => 'Catrsg',
+	'redimpacto' => 'Redimpacto',
+	'referencia' => 'Referencia',
+	'tiposgrsg' => 'Tiposgrsg',
+	'salvaguardariesgo_no' => 'Salvaguarda Riesgo No',
 );
 ?>
