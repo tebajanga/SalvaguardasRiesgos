@@ -14,8 +14,8 @@ class SalvaguardasRiesgos extends CRMEntity {
 	public $db;
 	public $log;
 
-	public $table_name = 'vtiger_MODULE_NAME_LOWERCASE';
-	public $table_index= 'MODULE_NAME_LOWERCASEid';
+	public $table_name = 'vtiger_salvaguardasriesgos';
+	public $table_index= 'salvaguardariesgoid';
 	public $column_fields = array();
 
 	/** Indicator if this is a custom module or standard module */
@@ -24,7 +24,7 @@ class SalvaguardasRiesgos extends CRMEntity {
 	/**
 	 * Mandatory table for supporting custom fields.
 	 */
-	public $customFieldTable = array('vtiger_MODULE_NAME_LOWERCASEcf', 'MODULE_NAME_LOWERCASEid');
+	public $customFieldTable = array('vtiger_salvaguardasriesgoscf', 'salvaguardariesgoid');
 	// related_tables variable should define the association (relation) between dependent tables
 	// FORMAT: related_tablename => array(related_tablename_column[, base_tablename, base_tablename_column[, related_module]] )
 	// Here base_tablename_column should establish relation with related_tablename_column
@@ -35,15 +35,15 @@ class SalvaguardasRiesgos extends CRMEntity {
 	/**
 	 * Mandatory for Saving, Include tables related to this module.
 	 */
-	public $tab_name = array('vtiger_crmentity', 'vtiger_MODULE_NAME_LOWERCASE', 'vtiger_MODULE_NAME_LOWERCASEcf');
+	public $tab_name = array('vtiger_crmentity', 'vtiger_salvaguardasriesgos', 'vtiger_salvaguardasriesgoscf');
 
 	/**
 	 * Mandatory for Saving, Include tablename and tablekey columnname here.
 	 */
 	public $tab_name_index = array(
 		'vtiger_crmentity' => 'crmid',
-		'vtiger_MODULE_NAME_LOWERCASE'   => 'MODULE_NAME_LOWERCASEid',
-		'vtiger_MODULE_NAME_LOWERCASEcf' => 'MODULE_NAME_LOWERCASEid',
+		'vtiger_salvaguardasriesgos'   => 'salvaguardariesgoid',
+		'vtiger_salvaguardasriesgoscf' => 'salvaguardariesgoid',
 	);
 
 	/**
@@ -52,52 +52,74 @@ class SalvaguardasRiesgos extends CRMEntity {
 	public $list_fields = array(
 		/* Format: Field Label => array(tablename => columnname) */
 		// tablename should not have prefix 'vtiger_'
-		'MODULE_NAME_LABEL'=> array('MODULE_NAME_LOWERCASE' => 'MODULE_REFERENCE_FIELD'),
-		'Assigned To' => array('crmentity' => 'smownerid')
+		'Salvaguarda Riesgo No'=> array('salvaguardasriesgos' => 'salvagurdariesgo_no'),
+		'Referencia' => array('salvaguardasriesgos' => 'referencia'),
+		'Catsg' => array('salvaguardasriesgos' => 'catsg'),
+		'Catrsg' => array('salvaguardasriesgos' => 'catrsg'),
+		'Redoprobabilidad' => array('salvaguardasriesgos' => 'redoprobabilidad'),
+		'Redimpacto' => array('salvaguardasriesgos' => 'redimpacto'),
+		'Tiposgrsg' => array('salvaguardasriesgos' => 'tiposgrsg')
 	);
 	public $list_fields_name = array(
 		/* Format: Field Label => fieldname */
-		'MODULE_NAME_LABEL'=> 'MODULE_REFERENCE_FIELD',
-		'Assigned To' => 'assigned_user_id'
+		'Salvaguarda Riesgo No'=> 'salvagurdariesgo_no',
+		'Referencia' => 'referencia',
+		'Catsg' => 'catsg',
+		'Catrsg' => 'catrsg',
+		'Redoprobabilidad' => 'redoprobabilidad',
+		'Redimpacto' => 'redimpacto',
+		'Tiposgrsg' => 'tiposgrsg'
 	);
 
 	// Make the field link to detail view from list view (Fieldname)
-	public $list_link_field = 'MODULE_REFERENCE_FIELD';
+	public $list_link_field = 'salvagurdariesgo_no';
 
 	// For Popup listview and UI type support
 	public $search_fields = array(
 		/* Format: Field Label => array(tablename => columnname) */
 		// tablename should not have prefix 'vtiger_'
-		'MODULE_NAME_LABEL'=> array('MODULE_NAME_LOWERCASE' => 'MODULE_REFERENCE_FIELD')
+		'Salvaguarda Riesgo No'=> array('salvaguardasriesgos' => 'salvagurdariesgo_no'),
+		'Referencia' => array('salvaguardasriesgos' => 'referencia'),
+		'Catsg' => array('salvaguardasriesgos' => 'catsg'),
+		'Catrsg' => array('salvaguardasriesgos' => 'catrsg'),
+		'Redoprobabilidad' => array('salvaguardasriesgos' => 'redoprobabilidad'),
+		'Redimpacto' => array('salvaguardasriesgos' => 'redimpacto'),
+		'Tiposgrsg' => array('salvaguardasriesgos' => 'tiposgrsg')
 	);
 	public $search_fields_name = array(
 		/* Format: Field Label => fieldname */
-		'MODULE_NAME_LABEL Name'=> 'MODULE_REFERENCE_FIELD'
+		'Salvaguarda Riesgo No'=> 'salvagurdariesgo_no',
+		'Referencia' => 'referencia',
+		'Catsg' => 'catsg',
+		'Catrsg' => 'catrsg',
+		'Redoprobabilidad' => 'redoprobabilidad',
+		'Redimpacto' => 'redimpacto',
+		'Tiposgrsg' => 'tiposgrsg'
 	);
 
 	// For Popup window record selection
-	public $popup_fields = array('MODULE_REFERENCE_FIELD');
+	public $popup_fields = array('salvagurdariesgo_no');
 
 	// Placeholder for sort fields - All the fields will be initialized for Sorting through initSortFields
 	public $sortby_fields = array();
 
 	// For Alphabetical search
-	public $def_basicsearch_col = 'MODULE_REFERENCE_FIELD';
+	public $def_basicsearch_col = 'salvagurdariesgo_no';
 
 	// Column value to use on detail view record text display
-	public $def_detailview_recname = 'MODULE_REFERENCE_FIELD';
+	public $def_detailview_recname = 'salvagurdariesgo_no';
 
 	// Required Information for enabling Import feature
-	public $required_fields = array('MODULE_REFERENCE_FIELD'=>1);
+	public $required_fields = array('salvagurdariesgo_no'=>1);
 
 	// Callback function list during Importing
 	public $special_functions = array('set_import_assigned_user');
 
-	public $default_order_by = 'MODULE_REFERENCE_FIELD';
+	public $default_order_by = 'salvagurdariesgo_no';
 	public $default_sort_order='ASC';
 	// Used when enabling/disabling the mandatory fields for the module.
 	// Refers to vtiger_field.fieldname values.
-	public $mandatory_fields = array('createdtime', 'modifiedtime', 'MODULE_REFERENCE_FIELD');
+	public $mandatory_fields = array('createdtime', 'modifiedtime', 'salvagurdariesgo_no');
 
 	public function save_module($module) {
 		if ($this->HasDirectImageField) {
@@ -113,7 +135,7 @@ class SalvaguardasRiesgos extends CRMEntity {
 	public function vtlib_handler($modulename, $event_type) {
 		if ($event_type == 'module.postinstall') {
 			// TODO Handle post installation actions
-			$this->setModuleSeqNumber('configure', $modulename, $modulename.'-', '0000001');
+			$this->setModuleSeqNumber('configure', $modulename, $modulename.'sgrg-', '0000001');
 		} elseif ($event_type == 'module.disabled') {
 			// TODO Handle actions when this module is disabled.
 		} elseif ($event_type == 'module.enabled') {
