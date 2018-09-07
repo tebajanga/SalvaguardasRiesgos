@@ -1,0 +1,26 @@
+<?xml version='1.0'?>
+<schema>
+	<tables>
+		<table>
+			<name>vtiger_salvaguardasriesgos</name>
+			<sql><![CDATA[CREATE TABLE `vtiger_salvaguardasriesgos` (
+  `salvaguardariesgoid` int(11) NOT NULL,
+  `catsg` int(11) default NULL,
+  `redprobabilidad` decimal(7,3) DEFAULT NULL,
+  `catrsg` int(11) default NULL,
+  `redimpacto` decimal(7,3) DEFAULT NULL,
+  `referencia` varchar(200) DEFAULT NULL,
+  `tiposgrsg` varchar(200) DEFAULT NULL,
+  `salvaguardariesgo_no` varchar(56) default NULL,
+  PRIMARY KEY (`salvaguardariesgoid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8]]></sql>
+		</table>
+		<table>
+			<name>vtiger_moduleclasscf</name>
+			<sql><![CDATA[CREATE TABLE `vtiger_salvaguardasriesgoscf` (
+  `salvaguardariesgoid` int(11) NOT NULL,
+  PRIMARY KEY (`salvaguardariesgoid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8]]></sql>
+		</table>
+	</tables>
+</schema>
