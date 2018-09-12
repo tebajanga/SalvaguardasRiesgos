@@ -10,7 +10,7 @@
 
 $mod_strings = array(
 	'SalvaguardasRiesgos' => 'SalvaguardasRiesgos',
-	'SINGLE_SalvaguardaRiesgo' => 'SalvaguardaRiesgo',
+	'SINGLE_SalvaguardasRiesgos' => 'SalvaguardaRiesgo',
 	'SalvaguardaRiesgo ID' => 'SalvaguardaRiesgo ID',
 
 	'LBL_CUSTOM_INFORMATION' => 'Custom Information',
